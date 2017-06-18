@@ -55,7 +55,7 @@ public class ContactHelper extends HelperBase{
     }
 
     public void editForm() {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+        click(By.xpath("//*[@id='content']//img[@title='Edit']")); //table[@id='maintable']/tbody/tr[2]/td[8]/a/img
     }
 
     public void submitContactModification() {
@@ -67,6 +67,6 @@ public class ContactHelper extends HelperBase{
     }
 
     public void deleteContact() {
-        click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+        click(By.xpath("//*[@id='content']//input[@value='Delete']")); //div[@id='content']/form[2]/div[2]/input
     }
 }
