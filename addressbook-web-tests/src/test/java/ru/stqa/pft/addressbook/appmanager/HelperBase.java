@@ -3,11 +3,7 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-/**
- * Created by Denis on 17.06.2017.
- */
 public class HelperBase {
     protected WebDriver wd;
 
@@ -26,6 +22,7 @@ public class HelperBase {
             wd.findElement(locator).sendKeys(text);
         }
     }
+
     public boolean isAlertPresent() {
         try {
             wd.switchTo().alert();

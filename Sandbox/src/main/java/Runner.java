@@ -1,8 +1,5 @@
 import com.sun.org.apache.xpath.internal.SourceTree;
 
-/**
- * Created by d.pacyna on 29.05.2017.
- */
 public class Runner {
     public static void main(String[] args) {
 

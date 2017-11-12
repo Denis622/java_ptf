@@ -3,9 +3,6 @@ package ru.stqa.ptf.sandbox;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-/**
- * Created by Denis on 28.06.2017.
- */
 public class Equationtests {
 
     @Test
@@ -13,7 +10,6 @@ public class Equationtests {
         Equation e = new Equation(1, 1, 1);
         Assert.assertEquals(e.rootNumber(), 0);
     }
-
 
     @Test
     public void test1() {
@@ -45,5 +41,4 @@ public class Equationtests {
         Equation e = new Equation(0, 0, 0);
         Assert.assertEquals(e.rootNumber(), -1);
     }
-
 }

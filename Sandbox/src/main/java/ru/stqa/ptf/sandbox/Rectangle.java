@@ -1,8 +1,5 @@
 package ru.stqa.ptf.sandbox;
 
-/**
- * Created by Denis on 28.05.2017.
- */
 public class Rectangle {
 
     public double a;
@@ -13,7 +10,7 @@ public class Rectangle {
         this.b = b;
     }
 
-    public double area () {
+    public double area() {
         return this.a * this.b;
     }
 

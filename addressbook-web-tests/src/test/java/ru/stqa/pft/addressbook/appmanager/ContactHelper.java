@@ -2,18 +2,14 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.models.ContactData;
 
-/**
- * Created by Denis on 18.06.2017.
- */
-public class ContactHelper extends HelperBase{
+public class ContactHelper extends HelperBase {
 
     private NavigationHelper navigationHelper;
 
     public ContactHelper(WebDriver wd) {
-        super (wd);
+        super(wd);
     }
 
     public void submitContactCreation() {
