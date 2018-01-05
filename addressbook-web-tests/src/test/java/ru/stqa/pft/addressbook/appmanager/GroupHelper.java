@@ -49,4 +49,15 @@ public class GroupHelper extends HelperBase {
     public void gotoAddNewContact() {
         click(By.name("add new"));
     }
+
+    public void createGroup(GroupData group) {
+        initGroupCreation();
+        fellGroupForm(group);
+        submitGroupCreation();
+        returnToGroupPage();
+    }
+
+    public boolean isThereAGroup() {
+        return isElementPresent(By.name("selected[]"));
+    }
 }
