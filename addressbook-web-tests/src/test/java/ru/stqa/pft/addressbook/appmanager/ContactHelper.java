@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.models.ContactData;
 
+import java.util.concurrent.TimeUnit;
+
 public class ContactHelper extends HelperBase {
 
     private NavigationHelper navigationHelper;
@@ -73,6 +75,14 @@ public class ContactHelper extends HelperBase {
     }
 
     public void deleteContact() {
-        click(By.xpath("//*[@id='content']//input[@value='Delete']")); //div[@id='content']/form[2]/div[2]/input
+        click(By.xpath("//*[@id='content']//input[@value='Delete']"));
+    }
+
+    public void createContact(ContactData contact, boolean creation) {
+        initNewContact();
+        fillTheContactForm(contact, creation);
+        submitContactCreation();
+    //    getNavigationHelper().returnToHomePage();
+        getNavigationHelper().goToHomePage();
     }
 }

@@ -18,7 +18,7 @@ public class GroupHelper extends HelperBase {
         click(By.name("submit"));
     }
 
-    public void fellGroupForm(GroupData groupData) {
+    public void fillGroupForm(GroupData groupData) {
         type(By.name("group_name"), groupData.getName());
         type(By.name("group_footer"), groupData.getFooter());
         type(By.name("group_header"), groupData.getHeader());
@@ -52,7 +52,7 @@ public class GroupHelper extends HelperBase {
 
     public void createGroup(GroupData group) {
         initGroupCreation();
-        fellGroupForm(group);
+        fillGroupForm(group);
         submitGroupCreation();
         returnToGroupPage();
     }

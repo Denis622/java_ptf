@@ -22,7 +22,7 @@ public class NavigationHelper extends HelperBase {
         if (isElementPresent(By.id("maintable"))) {
             return;
         }
-        click(By.linkText("groups"));
+        click(By.linkText("home"));
     }
 
     public void returnToHomePage() {
