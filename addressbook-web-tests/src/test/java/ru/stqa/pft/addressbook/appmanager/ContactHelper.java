@@ -1,13 +1,10 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.models.ContactData;
-
-import java.util.concurrent.TimeUnit;
 
 public class ContactHelper extends HelperBase {
 
@@ -58,12 +55,15 @@ public class ContactHelper extends HelperBase {
         return navigationHelper;
     }
 
-    public void goHome() {
-        click(By.linkText("home"));
+    public void returnToHomePage() {
+        if (isElementPresent(By.id("maintable"))) {
+            return;
+        }
+        click(By.linkText("home page"));
     }
 
     public void editForm() {
-        click(By.xpath("//*[@id='content']//img[@title='Edit']")); //table[@id='maintable']/tbody/tr[2]/td[8]/a/img
+        click(By.xpath("//*[@id='content']//img[@title='Edit']"));
     }
 
     public void submitContactModification() {
@@ -82,7 +82,11 @@ public class ContactHelper extends HelperBase {
         initNewContact();
         fillTheContactForm(contact, creation);
         submitContactCreation();
-    //    getNavigationHelper().returnToHomePage();
-        getNavigationHelper().goToHomePage();
+        returnToHomePage();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+
     }
 }
