@@ -2,9 +2,14 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.models.ContactData;
+import ru.stqa.pft.addressbook.models.GroupData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ContactHelper extends HelperBase {
 
@@ -88,5 +93,21 @@ public class ContactHelper extends HelperBase {
     public boolean isThereAContact() {
         return isElementPresent(By.name("selected[]"));
 
+    }
+
+    public List<ContactData> getContactList() {
+
+        List<ContactData> contacts = new ArrayList<ContactData>();
+
+        List<WebElement> firstNameElements = wd.findElements(By.cssSelector("[name='entry'] td:nth-child(3)"));
+        List<WebElement> lastNamelements = wd.findElements(By.cssSelector("[name='entry'] td:nth-child(2)"));
+
+        for (int i = 0; i < (firstNameElements.size() | lastNamelements.size()); i++) {
+            String firstName = firstNameElements.get(i).getText();
+            String lastName = lastNamelements.get(i).getText();
+            ContactData contact = new ContactData(firstName, null, lastName, null, null, null);
+            contacts.add(contact);
+        }
+        return contacts;
     }
 }
