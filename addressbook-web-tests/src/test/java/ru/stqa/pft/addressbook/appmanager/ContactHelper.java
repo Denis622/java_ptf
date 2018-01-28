@@ -67,8 +67,11 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home page"));
     }
 
-    public void editForm() {
-        click(By.xpath("//*[@id='content']//img[@title='Edit']"));
+    public void editForm(int index) {
+
+        if(!wd.findElements(By.xpath("//*[@id='content']//img[@title='Edit']")).get(index).isSelected()) {
+            wd.findElements(By.xpath("//*[@id='content']//img[@title='Edit']")).get(index).click();
+        }
     }
 
     public void submitContactModification() {

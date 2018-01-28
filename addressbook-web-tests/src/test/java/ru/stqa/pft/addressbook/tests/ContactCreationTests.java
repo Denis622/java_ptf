@@ -22,11 +22,12 @@ public class ContactCreationTests extends TestBase {
         List<ContactData> after = app.getContactHelper().getContactList();
         before.add(contact);
 
+        Assert.assertEquals(after.size(), before.size());
+
         Comparator<? super ContactData> byLastName = (o1, o2) -> o1.getLastName().compareTo(o2.getLastName());
         before.sort(byLastName);
         after.sort(byLastName);
 
-        Assert.assertEquals(after.size(), before.size());
         Assert.assertEquals(before, after);
     }
 }
